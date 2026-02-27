@@ -27,7 +27,7 @@ while True:
     if key == 13: 
         if len(faces) > 0:
             for i, (x, y, w, h) in enumerate(faces):
-                face_img = frame[y:y + h, x:x + w]  # Extract face
+                face_img = frame[y:y + h, x:x + w]  
                 filename = f"{save_path}/{username}_{image_count}.jpg"
                 cv2.imwrite(filename, face_img)
                 print(f"Image saved: {filename}")
@@ -35,10 +35,11 @@ while True:
         else:
             print("No face detected. Try again.")
 
-    elif key == ord('q'):  # Press 'q' to quit
+    elif key == ord('q'):  
         break
 
-# Release resources
+
 cap.release()
 cv2.destroyAllWindows()
+
 
